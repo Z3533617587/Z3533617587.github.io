@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>点击查看详情</title>
+    <title>软件学院实验室</title>
+    <link rel="stylesheet" href="style/styles.css"> 
     <style>
         #details {
             display: none;
@@ -13,7 +14,18 @@
             border: 1px solid #ddd;
         }
     </style>
-</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <button id="toggleButton">软件实验室</button>
+        <ul id="directory">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="research.html">研究</a></li>
+            <li><a href="publications.html">成果</a></li>
+            <li><a href="team.html">团队</a></li>
+        </ul>
+    </nav>
+ 
 <body>
 
 <button onclick="toggleDetails()">点击查看详情</button>
