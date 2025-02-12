@@ -1,3 +1,37 @@
+<!-- team.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>科研团队 - 软件学院实验室</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="research.html">研究</a></li>
+            <li><a href="publications.html">成果</a></li>
+            <li><a href="team.html" class="active">团队</a></li>
+        </ul>
+    </nav>
+
+    <section class="main-content">
+        <h1>科研团队</h1>
+        
+        <div class="team-card">
+            <h2>领域软件技术</h2>
+            <div class="member">
+                <img src="images/领域软件技术负责人.png" alt="领域软件技术负责人" width="200">
+                <div class="info">
+                    <h3>团队负责人：赵涓涓（教授）</h3>
+                    <h3>个人简介：</h3>
+                    <p>  教授，博士生导师，博士。太原理工大学软件学院院长，太原理工大学信息与电气学部副主任，太原理工大学学术委员会委员，太原理工大学图像与智能团队负责人；中国计算机学会杰出会员，中国计算机学会青年科技论坛太原主席，中国计算机学会虚拟现实与可视化技术专委、人机交互专委、计算机视觉专委、教育专委执委，中国体视学会理事。现任教育部“工程教育专业认证”专家，国家科技部、教育部重大科技专项评审专家，国家自然科学基金项目、国家博士后基金项目评审专家。山西省大数据智库专家，山西省政府特聘专家。2023年获得“山西省教学名师”称号，2020年获得“山西省高校师德楷模”称号；2019年获山西省第十届“山西省优秀科技工作者”称号；2019年获山西省“五一劳动奖章”；2010年获得获得“山西省经济建设突出贡献”个人二等功。 担任国际期刊Multimedia Tools and Applications, IEEE Journal of Biomedical and Health Informatics, Journal of Intelligent Manufacturing, Computers in Biology and Medicine, Recent Patents on Computer Science,Visual Informatics,Scientific Reports等SCI期刊的审稿人，担任《计算机学报》、《软件学报》《计算机研究与发展》、《清华大学学报(英文版)》、《中国图象图形学报》等国家核心期刊的编委、审稿人。</p>
+                    <h3>研究方向</h3>
+                    <p> 以软件工程需求和数据驱动为出发点，开展面向软件工程的大数据分析、大数据质量管理与智能分析和生物医学大数据分析等，在智能医疗、城市管理、公共安全和智能交通等领域应用，形成以人工智能技术为基础，系统解决软件工程领域相关难题的领域软件工程团队。</p>
+                    <h3>团队成果:</h3>
+                    <p>团队承担过国家自然科学基金等国家级项目7项，主持省部级各类科研项目60余项、横项项目30余项，团队在国内外学术期刊会议上发表专业论文230余篇、获批授权专利49项，团队2023年获批国家级一流课程《面向对象程序设计基础》，2023年、2018年两次获得“山西省教学成果奖”一等奖；2023年获得“山西省科学技术奖”技术发明二等奖，2021年获得“山西省科学技术奖”自然科学二等奖，2020年山西省精品共享课《面向对象程序设计基础》，2013年《面向对象编程思想概览》获评教育部“国家级精品视频公开课”。团队现拥有山西省重点科技创新人才重点团队——多模态医学数据智能分析及辅助诊断，是软件工程学科软件人才的重要培养基地。</p>
+                    <h3>成员基本情况</h3>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -9,9 +43,9 @@
             border-collapse: collapse;
         }
         th, td {
-            border: 1px solid #ccc;
-            padding: 8px;
+            border: 1px solid #dddddd;
             text-align: left;
+            padding: 8px;
         }
         th {
             background-color: #f2f2f2;
@@ -20,97 +54,122 @@
 </head>
 <body>
     <h2>人员信息表</h2>
-    <table>
+    <table id="infoTable">
         <thead>
             <tr>
                 <th>姓名</th>
                 <th>性别</th>
                 <th>职称</th>
-                <th>专业领域</th>
-                <th>邮箱/联系方式</th>
+                <th>主要研究方向</th>
+                <th>邮箱</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>李 钢</td>
-                <td>男</td>
-                <td>副教授</td>
-                <td>计算机科学与技术、软件工程、人工智能、大数据、图像处理等</td>
-                <td>ligang@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>高保禄</td>
-                <td>男</td>
-                <td>讲师</td>
-                <td>虚拟现实、地理信息系统、智能数据处理、大数据、物联网技术等</td>
-                <td>85389301@qq.com</td>
-            </tr>
-            <tr>
-                <td>张 玲</td>
-                <td>女</td>
-                <td>副教授</td>
-                <td>计算机视觉、智能医学图像处理、机器学习、深度学习等</td>
-                <td>17625387@qq.com</td>
-            </tr>
-            <tr>
-                <td>边 婧</td>
-                <td>女</td>
-                <td>讲师</td>
-                <td>网络安全、智能信息处理</td>
-                <td>bianjing01@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>王建峰</td>
-                <td>男</td>
-                <td>讲师</td>
-                <td>认知智能、深度学习模型推理与验证、可视媒体计算</td>
-                <td>wangjianfeng@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>李 瑶</td>
-                <td>女</td>
-                <td>讲师</td>
-                <td>脑影像学、智能信息处理</td>
-                <td>liyao@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>郭牧寒</td>
-                <td>女</td>
-                <td>助教</td>
-                <td>机器学习在医学图像等领域的应用</td>
-                <td>guomuhan@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>贺小艳</td>
-                <td>女</td>
-                <td>助教</td>
-                <td>大数据、自动化测试</td>
-                <td>hexiaoyan@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>郭羽翔</td>
-                <td>男</td>
-                <td>助教</td>
-                <td>脑科学与人工智能相关</td>
-                <td>sxtygyx@163.com</td>
-            </tr>
-            <tr>
-                <td>张林娟</td>
-                <td>女</td>
-                <td>助教</td>
-                <td>人工智能、说话人识别、语音情感识别</td>
-                <td>zhanglinjuan@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>党建飞</td>
-                <td>男</td>
-                <td>助教</td>
-                <td>数据挖掘、知识推理</td>
-                <td>18435186223@163.com</td>
-            </tr>
+            <!-- Data will be inserted here -->
         </tbody>
     </table>
+
+    <script>
+        const data = [
+            {
+                name: "刘松华",
+                gender: "男",
+                title: "副教授",
+                researchDirections: "数据挖掘、复杂网络、时间序列、深度学习及在医学图像等领域的应用",
+                email: "44628212@qq.com"
+            },
+            {
+                name: "王星魁",
+                gender: "男",
+                title: "副教授",
+                researchDirections: "信息安全、软件工程",
+                email: "wxk0301@163.com"
+            },
+            {
+                name: "孙静宇",
+                gender: "男",
+                title: "副教授",
+                researchDirections: "推荐系统、通用人工智能、大数据、图像处理、信息安全、智能交通、智慧城市",
+                email: "sunjingyu@tyut.edu.cn"
+            },
+            {
+                name: "宋晓涛",
+                gender: "女",
+                title: "讲师",
+                researchDirections: "智能软件工程、开源软件等",
+                email: "songxiaotao@tyut.edu.cn"
+            },
+            {
+                name: "阎鹏飞",
+                gender: "男",
+                title: "讲师",
+                researchDirections: "双目立体视觉、计算机图像加密",
+                email: "yanpengfei@tyut.edu.cn"
+            },
+            {
+                name: "王千山",
+                gender: "男",
+                title: "讲师",
+                researchDirections: "医学图像处理、脑科学与智能计算",
+                email: "wangqianshan@tyut.edu.cn"
+            },
+            {
+                name: "赵紫娟",
+                gender: "女",
+                title: "讲师",
+                researchDirections: "医学图像处理、中医大数据分析",
+                email: "zhaozijuan@tyut.edu.cn"
+            },
+            {
+                name: "刘 艳",
+                gender: "女",
+                title: "讲师",
+                researchDirections: "微电子器件的性能仿真与计算",
+                email: "liuyan@tyut.edu.cn"
+            },
+            {
+                name: "邢 欢",
+                gender: "女",
+                title: "助教",
+                researchDirections: "人机交互与混合现实",
+                email: "xinghuan@tyut.edu.cn"
+            },
+            {
+                name: "任尊晓",
+                gender: "女",
+                title: "助教",
+                researchDirections: "数据挖掘",
+                email: "rmmluna@163.com"
+            },
+            {
+                name: "王 琦",
+                gender: "女",
+                title: "助教",
+                researchDirections: "网络安全、数据挖掘、移动互联",
+                email: "wangqi05@tyut.edu.cn"
+            }
+        ];
+
+        const tableBody = document.querySelector("#infoTable tbody");
+        data.forEach(person => {
+            const row = document.createElement("tr");
+            Object.values(person).forEach(value => {
+                const cell = document.createElement("td");
+                cell.textContent = value;
+                row.appendChild(cell);
+            });
+            tableBody.appendChild(row);
+        });
+    </script>
 </body>
 </html>
 
-
+    <footer class="footer">
+        <h2>联系我们</h2>
+        <p>地址: 明向校区行勉楼一层和软件学院一层</p>
+        <p>电话: +86 1234567890</p>
+        <p>邮箱: contact@example.com</p>
+    </footer>
+    </footer>
+</body>
+</html>
