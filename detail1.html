@@ -1,8 +1,141 @@
 <!-- team.html -->
-<!DOCTYPE html>
-<html>
+!DOCTYPE html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>软件学院实验室</title>
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding-top: 60px;
+        }
+
+        /* 导航栏样式 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #333;
+            padding: 1rem;
+            transition: top 0.3s;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar.hidden {
+            top: -60px;
+        }
+
+        #directory {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        #directory li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        #directory li a:hover {
+            background: #555;
+        }
+
+        /* 响应式导航 */
+        @media (max-width: 768px) {
+            #directory {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #333;
+                flex-direction: column;
+                padding: 1rem;
+                transform: translateY(-100%);
+            }
+
+            #directory.active {
+                transform: translateY(0);
+            }
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .dot.active {
+            background: white;
+        }
+
+        /* 内容样式 */
+        .content-image {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 页脚样式 */
+        .footer {
+            background: #333;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .read-more:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <button id="toggleButton">软件实验室</button>
+        <ul id="directory">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="research.html">研究</a></li>
+            <li><a href="publications.html">成果</a></li>
+            <li><a href="team.html">团队</a></li>
+        </ul>
+    </nav>
     <title>科研团队 - 软件学院实验室</title>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>软件服务工程</title>
