@@ -6,6 +6,22 @@ body {
 }
 
 /* 导航栏 */
+#directory {
+    display: none; /* Initially hidden */
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+#directory ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#directory li {
+    padding: 5px 0;
+}
+
 .navbar {
     background: #333;
     color: white;
