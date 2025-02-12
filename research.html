@@ -1,10 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击查看详情</title>
+    <style>
+        #details {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+    </style>
 </head>
 <body>
+
+<button onclick="toggleDetails()">点击查看详情</button>
+
+<div id="details">
+    这里是详细信息内容。你可以在这里添加更多的文本、图片或其他HTML元素。
+</div>
+
+<script>
+    function toggleDetails() {
+        var details = document.getElementById("details");
+        if (details.style.display === "none") {
+            details.style.display = "block";
+        } else {
+            details.style.display = "none";
+        }
+    }
+</script>
 
 </body>
 </html>
