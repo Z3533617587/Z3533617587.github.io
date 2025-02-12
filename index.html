@@ -5,6 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toggle Directory</title>
     <link rel="stylesheet" href="style/styles.css">
+    <style>
+        /* 新增样式 */
+        .navbar {
+            position: relative;
+            padding: 15px;
+            background: #f8f9fa;
+        }
+
+        #directory {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        #directory.active {
+            max-height: 500px; /* 根据实际内容调整 */
+        }
+
+        #directory li {
+            padding: 8px 0;
+        }
+
+        /* 轮播图样式 */
+        .slider-container {
+            position: relative;
+            max-width: 1500px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        .slider-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .slider-arrow {
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background: white;
+        }
+    </style>
 </head>
 <body>
     <!-- 导航栏 -->
@@ -22,9 +108,25 @@
     <!-- 主内容区域 -->
     <div class="content">
         <section id="home">
-            <img src="image/太理.jpg" alt="太理" class="content-image" width="1500">
+            <!-- 轮播图 -->
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide">
+                        <img src="image/太理.jpg" alt="太理">
+                    </div>
+                    <div class="slide">
+                        <img src="image/校徽.jpg" alt="校徽">
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-arrow prev">❮</button>
+                    <button class="slider-arrow next">❯</button>
+                </div>
+                <div class="slider-dots"></div>
+            </div>
+
             <h1>首页</h1>
-            <p>欢迎来到软件学院实验室的官方网站！</p>
+                        <p>欢迎来到软件学院实验室的官方网站！</p>
             <h1>实验室介绍</h1>
             <p>软件学院实验室于2018年建设完成，总面积约1900平米，位于明向校区行勉楼一层和软件学院一层，包含了本科实验室、研究生实验室和创新实验室。</p>
             <p>本科实验室总面积约1200平米，包含4个实验室（A1，C1，C2，C3）和1个服务器机房，每个实验室有130台云终端，总共可同时容纳520人上机实验。实验室部署方式架构采用了先进的桌面云解决方案，设备包括了14台高性能服务器、520台云终端，及其他多媒体控制、无线网络等设备。可以开展课程实验、课程设计、毕业设计、线上教学、创新实践课程等教学过程。</p>
@@ -54,6 +156,9 @@
             <p>了解更多关于我们实验室的信息。</p>
         </section>
     </div>
+        </section>
+        <!-- 其他section保持不变 -->
+    </div>
 
     <!-- 页脚 -->
     <footer class="footer">
@@ -62,7 +167,63 @@
         <p>电话: +86 1234567890</p>
         <p>邮箱: contact@example.com</p>
     </footer>
-    
+
+    <script>
+        // 导航栏切换功能
+        const toggleButton = document.getElementById('toggleButton');
+        const directory = document.getElementById('directory');
+
+        toggleButton.addEventListener('click', () => {
+            directory.classList.toggle('active');
+        });
+
+        // 轮播图功能
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        const dotsContainer = document.querySelector('.slider-dots');
+        
+        let currentIndex = 0;
+        const slideWidth = slides[0].clientWidth;
+
+        // 创建指示点
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        function goToSlide(index) {
+            currentIndex = index;
+            slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+            updateDots();
+        }
+
+        function updateDots() {
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            goToSlide(currentIndex);
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            goToSlide(currentIndex);
+        });
+
+        // 自动播放
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            goToSlide(currentIndex);
+        }, 5000);
+    </script>
 </body>
 </html>
 
