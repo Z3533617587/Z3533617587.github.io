@@ -1,115 +1,149 @@
+<!-- team.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>科研团队 - 软件学院实验室</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="research.html">研究</a></li>
+            <li><a href="publications.html">成果</a></li>
+            <li><a href="team.html" class="active">团队</a></li>
+        </ul>
+    </nav>
+
+    <section class="main-content">
+        <h1>科研团队</h1>
+        
+        <div class="team-card">
+            <h2>软件工程技术</h2>
+            <div class="member">
+                <img src="images/软件工程技术负责人.png" alt="软件工程技术负责人" width="200">
+                <div class="info">
+                    <h3>团队负责人：冯秀芳（教授）</h3>
+                    <h3>个人简介：</h3>
+                    <p> 太原理工大学软件学院副院长，工学博士，硕士生导师，中国计算机学会高级会员，中国计算机学会物联网专委、山西省计算机学会理事，太原理工大学学术委员会委员。在太原理工大学三十多年一直从事计算机相关专业的教学科研工作，曾先后在加拿大皇后大学、日本横滨国立大学、美国德克萨斯大学作为访问学者进行留学访问。近几年负责或参与国家和山西省自然科学基金、山西省重点研发计划项目、回国留学基金项目、科技基础条件平台项目以及横向项目等十多项，撰写教材或专著六部。</p>
+                    <h3>研究方向</h3>
+                    <p> 软件工程与服务、脑科学与智能信息处理、虚拟现实技术、智慧医疗及情感计算，包括新型软件体系结构、信息处理与服务、群体智能、高性能计算和智能人机交互等多个领域。主要研究智能软件开发方法、软件开发技术与应用等。</p>
+                    <h3>团队成果:</h3>
+                    <p>团队聚焦软件工程技术前沿领域，在深度学习、脑科学与智能信息处理、虚拟现实、智慧医疗及情感计算等方向展开深入研究，在沉浸式人机交互、影像基因智能计算、脑机接口等方面形成特色优势。团队近几年承担了20多项国家级与省部级项目，取得了重要科研成果，在国际和国内顶尖的期刊与学术会议上发表了50多篇高水平论文，研究成果得到广泛应用，有力推动了相关技术领域的发展，团队2023年获批国家级一流课程《Web程序设计基础》。同时，团队高度重视人才的培养，倡导产学研深度融合，与多家知名企业建立了密切的合作关系，为学生提供了丰富的实践机会，团队现拥有山西省虚拟现实技术研究生教育创新中心，是软件工程学科软件人才的重要培养基地。
+                    <h3>成员基本情况</h3>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>人员信息表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人员信息表格</title>
     <style>
         table {
             width: 100%;
             border-collapse: collapse;
         }
         th, td {
-            border: 1px solid #ccc;
+            border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
         }
         th {
             background-color: #f2f2f2;
         }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
     </style>
 </head>
 <body>
-    <h2>人员信息表</h2>
+    <h1>人员信息表格</h1>
     <table>
         <thead>
             <tr>
                 <th>姓名</th>
                 <th>性别</th>
                 <th>职称</th>
-                <th>专业领域</th>
-                <th>邮箱/联系方式</th>
+                <th>主要研究方向</th>
+                <th>邮箱</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>李 钢</td>
+                <td>曹锐</td>
                 <td>男</td>
                 <td>副教授</td>
-                <td>计算机科学与技术、软件工程、人工智能、大数据、图像处理等</td>
-                <td>ligang@tyut.edu.cn</td>
+                <td>脑科学与智能信息处理、脑机接口与人工智能、虚拟现实等</td>
+                <td>caorui@tyut.edu.cn</td>
             </tr>
             <tr>
-                <td>高保禄</td>
+                <td>张辉</td>
                 <td>男</td>
-                <td>讲师</td>
-                <td>虚拟现实、地理信息系统、智能数据处理、大数据、物联网技术等</td>
-                <td>85389301@qq.com</td>
-            </tr>
-            <tr>
-                <td>张 玲</td>
-                <td>女</td>
-                <td>副教授</td>
-                <td>计算机视觉、智能医学图像处理、机器学习、深度学习等</td>
-                <td>17625387@qq.com</td>
-            </tr>
-            <tr>
-                <td>边 婧</td>
-                <td>女</td>
-                <td>讲师</td>
-                <td>网络安全、智能信息处理</td>
-                <td>bianjing01@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>王建峰</td>
-                <td>男</td>
-                <td>讲师</td>
-                <td>认知智能、深度学习模型推理与验证、可视媒体计算</td>
-                <td>wangjianfeng@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>李 瑶</td>
-                <td>女</td>
-                <td>讲师</td>
-                <td>脑影像学、智能信息处理</td>
-                <td>liyao@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>郭牧寒</td>
-                <td>女</td>
-                <td>助教</td>
-                <td>机器学习在医学图像等领域的应用</td>
-                <td>guomuhan@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>贺小艳</td>
-                <td>女</td>
-                <td>助教</td>
-                <td>大数据、自动化测试</td>
-                <td>hexiaoyan@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>郭羽翔</td>
-                <td>男</td>
-                <td>助教</td>
-                <td>脑科学与人工智能相关</td>
+                <td>高级工程师</td>
+                <td>数据挖掘、Web应用等</td>
                 <td>sxtygyx@163.com</td>
             </tr>
             <tr>
-                <td>张林娟</td>
-                <td>女</td>
-                <td>助教</td>
-                <td>人工智能、说话人识别、语音情感识别</td>
-                <td>zhanglinjuan@tyut.edu.cn</td>
+                <td>温昕</td>
+                <td>男</td>
+                <td>讲师</td>
+                <td>脑科学与智能计算、深度学习</td>
+                <td>xwen@tyut.edu.cn</td>
             </tr>
             <tr>
-                <td>党建飞</td>
+                <td>董云云</td>
+                <td>女</td>
+                <td>讲师</td>
+                <td>人工智能图像处理、计算机视觉与模式识别、影像基因智能计算</td>
+                <td>dongyunyun312902@126.com</td>
+            </tr>
+            <tr>
+                <td>王丽娟</td>
+                <td>女</td>
+                <td>讲师</td>
+                <td>计算机网络及无线传感器网络可靠性研究</td>
+                <td>wanglj@tyut.edu.cn</td>
+            </tr>
+            <tr>
+                <td>郝雁嵘</td>
+                <td>女</td>
+                <td>讲师</td>
+                <td>脑科学与智能计算、情感计算</td>
+                <td>haoyanrong@tyut.edu.cn</td>
+            </tr>
+            <tr>
+                <td>曹若琛</td>
+                <td>男</td>
+                <td>讲师</td>
+                <td>虚拟现实、人机交互、人工智能</td>
+                <td>caoruochen@tyut.edu.cn</td>
+            </tr>
+            <tr>
+                <td>高程昕</td>
                 <td>男</td>
                 <td>助教</td>
-                <td>数据挖掘、知识推理</td>
-                <td>18435186223@163.com</td>
+                <td>脑机接口</td>
+                <td>gaochenxin@tyut.edu.cn</td>
+            </tr>
+            <tr>
+                <td>闫琛</td>
+                <td>男</td>
+                <td>助教</td>
+                <td>人工智能及在医学图像等领域的应用</td>
+                <td>yanchen@tyut.edu.cn</td>
             </tr>
         </tbody>
     </table>
+</body>
+</html>
+
+    <footer class="footer">
+        <h2>联系我们</h2>
+        <p>地址: 明向校区行勉楼一层和软件学院一层</p>
+        <p>电话: +86 1234567890</p>
+        <p>邮箱: contact@example.com</p>
+    </footer>
+    </footer>
 </body>
 </html>
 
