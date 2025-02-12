@@ -18,19 +18,43 @@
             padding-top: 80px;
         }
 
-        /* 导航栏样式（保持与首页一致） */
+        /* 导航栏样式 */
         .navbar {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(51, 51, 51, 0.95);
+            background: #333;
             padding: 1rem;
+            transition: top 0.3s;
             z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            backdrop-filter: blur(10px);
         }
+
+        .navbar.hidden {
+            top: -60px;
+        }
+
+        #directory {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        #directory li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        #directory li a:hover {
+            background: #555;
+        }
+
 
         /* 团队内容样式 */
         .main-content {
