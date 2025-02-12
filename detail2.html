@@ -1,23 +1,21 @@
-<!-- team.html -->
-<!-- team.html -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>软件学院实验室</title>
+    <title>科研团队 - 软件学院实验室</title>
     <style>
         /* 基础样式 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', '微软雅黑', sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            padding-top: 60px;
+            background: #f5f7fa;
+            padding-top: 80px;
         }
 
         /* 导航栏样式 */
@@ -57,72 +55,128 @@
             background: #555;
         }
 
-        /* 响应式导航 */
-        @media (max-width: 768px) {
-            #directory {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: #333;
-                flex-direction: column;
-                padding: 1rem;
-                transform: translateY(-100%);
-            }
 
-            #directory.active {
-                transform: translateY(0);
-            }
-        }
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.5);
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .dot.active {
-            background: white;
-        }
-
-        /* 内容样式 */
-        .content-image {
-            max-width: 100%;
-            height: auto;
-            margin: 1rem 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        section {
-            padding: 2rem;
+        /* 团队内容样式 */
+        .main-content {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
 
-        /* 页脚样式 */
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        /* 团队卡片样式 */
+        .team-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .team-card h2 {
+            color: #3498db;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 1rem;
+        }
+
+        /* 成员信息样式 */
+        .member {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+        }
+
+        .member img {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .member .info {
+            flex: 1;
+        }
+
+        .member h3 {
+            color: #2c3e50;
+            margin: 1rem 0;
+            font-size: 1.2rem;
+        }
+
+        .member p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* 表格样式优化 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .member {
+                flex-direction: column;
+            }
+
+            .member img {
+                width: 100%;
+                height: auto;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        /* 页脚样式（保持与首页一致） */
         .footer {
             background: #333;
             color: white;
             padding: 2rem;
             text-align: center;
+            margin-top: 3rem;
         }
 
-        .read-more {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 8px 20px;
-            background: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-
-        .read-more:hover {
-            background: #0056b3;
+        .footer h2 {
+            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -154,118 +208,91 @@
                     <h3>团队成果:</h3>
                     <p>团队聚焦软件工程技术前沿领域，在深度学习、脑科学与智能信息处理、虚拟现实、智慧医疗及情感计算等方向展开深入研究，在沉浸式人机交互、影像基因智能计算、脑机接口等方面形成特色优势。团队近几年承担了20多项国家级与省部级项目，取得了重要科研成果，在国际和国内顶尖的期刊与学术会议上发表了50多篇高水平论文，研究成果得到广泛应用，有力推动了相关技术领域的发展，团队2023年获批国家级一流课程《Web程序设计基础》。同时，团队高度重视人才的培养，倡导产学研深度融合，与多家知名企业建立了密切的合作关系，为学生提供了丰富的实践机会，团队现拥有山西省虚拟现实技术研究生教育创新中心，是软件工程学科软件人才的重要培养基地。
                     <h3>成员基本情况</h3>
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>人员信息表格</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-    </style>
-</head>
-<body>
-    <h1>人员信息表格</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>姓名</th>
-                <th>性别</th>
-                <th>职称</th>
-                <th>主要研究方向</th>
-                <th>邮箱</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>曹锐</td>
-                <td>男</td>
-                <td>副教授</td>
-                <td>脑科学与智能信息处理、脑机接口与人工智能、虚拟现实等</td>
-                <td>caorui@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>张辉</td>
-                <td>男</td>
-                <td>高级工程师</td>
-                <td>数据挖掘、Web应用等</td>
-                <td>sxtygyx@163.com</td>
-            </tr>
-            <tr>
-                <td>温昕</td>
-                <td>男</td>
-                <td>讲师</td>
-                <td>脑科学与智能计算、深度学习</td>
-                <td>xwen@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>董云云</td>
-                <td>女</td>
-                <td>讲师</td>
-                <td>人工智能图像处理、计算机视觉与模式识别、影像基因智能计算</td>
-                <td>dongyunyun312902@126.com</td>
-            </tr>
-            <tr>
-                <td>王丽娟</td>
-                <td>女</td>
-                <td>讲师</td>
-                <td>计算机网络及无线传感器网络可靠性研究</td>
-                <td>wanglj@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>郝雁嵘</td>
-                <td>女</td>
-                <td>讲师</td>
-                <td>脑科学与智能计算、情感计算</td>
-                <td>haoyanrong@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>曹若琛</td>
-                <td>男</td>
-                <td>讲师</td>
-                <td>虚拟现实、人机交互、人工智能</td>
-                <td>caoruochen@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>高程昕</td>
-                <td>男</td>
-                <td>助教</td>
-                <td>脑机接口</td>
-                <td>gaochenxin@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>闫琛</td>
-                <td>男</td>
-                <td>助教</td>
-                <td>人工智能及在医学图像等领域的应用</td>
-                <td>yanchen@tyut.edu.cn</td>
-            </tr>
-        </tbody>
-    </table>
-</body>
-</html>
+            <table>
+                <thead>
+                    <tr>
+                        <th>姓名</th>
+                        <th>性别</th>
+                        <th>职称</th>
+                        <th>专业领域</th>
+                        <th>联系方式</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>曹锐</td>
+                        <td>男</td>
+                        <td>副教授</td>
+                        <td>脑科学与智能信息处理、脑机接口与人工智能、虚拟现实等</td>
+                        <td>caorui@tyut.edu.cn</td>
+                    </tr>
+                    <tr>
+                        <td>张辉</td>
+                        <td>男</td>
+                        <td>高级工程师</td>
+                        <td>数据挖掘、Web应用等</td>
+                        <td>sxtygyx@163.com</td>
+                    </tr>
+                    <tr>
+                        <td>温昕</td>
+                        <td>男</td>
+                        <td>讲师</td>
+                        <td>脑科学与智能计算、深度学习</td>
+                        <td>xwen@tyut.edu.cn</td>
+                    </tr>
+                    <tr>
+                        <td>董云云</td>
+                        <td>女</td>
+                        <td>讲师</td>
+                        <td>人工智能图像处理、计算机视觉与模式识别、影像基因智能计算</td>
+                        <td>dongyunyun312902@126.com</td>
+                    </tr>
+                    <tr>
+                        <td>王丽娟</td>
+                        <td>女</td>
+                        <td>讲师</td>
+                        <td>计算机网络及无线传感器网络可靠性研究</td>
+                        <td>wanglj@tyut.edu.cn</td>
+                    </tr>
+                    <tr>
+                        <td>郝雁嵘</td>
+                        <td>女</td>
+                        <td>讲师</td>
+                        <td>脑科学与智能计算、情感计算</td>
+                        <td>haoyanrong@tyut.edu.cn</td>
+                    </tr>
+                    <tr>
+                        <td>曹若琛</td>
+                        <td>男</td>
+                        <td>讲师</td>
+                        <td>虚拟现实、人机交互、人工智能</td>
+                        <td>caoruochen@tyut.edu.cn</td>
+                    </tr>
+                    <tr>
+                        <td>高程昕</td>
+                        <td>男</td>
+                        <td>助教</td>
+                        <td>脑机接口</td>
+                        <td>gaochenxin@tyut.edu.cn</td>
+                    </tr>
+                    <tr>
+                        <td>闫琛</td>
+                        <td>男</td>
+                        <td>助教</td>
+                        <td>人工智能及在医学图像等领域的应用</td>
+                        <td>yanchen@tyut.edu.cn</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 
+    <!-- 页脚 -->
     <footer class="footer">
         <h2>联系我们</h2>
         <p>地址: 明向校区行勉楼一层和软件学院一层</p>
         <p>电话: +86 1234567890</p>
         <p>邮箱: contact@example.com</p>
     </footer>
-    </footer>
 </body>
 </html>
-
