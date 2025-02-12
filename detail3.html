@@ -1,12 +1,11 @@
 <!-- team.html -->
+<!-- team.html -->
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>科研团队 - 软件学院实验室</title>
-      <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>领域软件工程</title>
+    <title>软件学院实验室</title>
     <style>
         /* 基础样式 */
         * {
@@ -75,15 +74,67 @@
                 transform: translateY(0);
             }
         }
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .dot.active {
+            background: white;
+        }
+
+        /* 内容样式 */
+        .content-image {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 页脚样式 */
+        .footer {
+            background: #333;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .read-more:hover {
+            background: #0056b3;
+        }
     </style>
 </head>
 <body>
-    <nav class="main-nav">
-        <ul>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <button id="toggleButton">软件实验室</button>
+        <ul id="directory">
             <li><a href="index.html">首页</a></li>
             <li><a href="research.html">研究</a></li>
             <li><a href="publications.html">成果</a></li>
-            <li><a href="team.html" class="active">团队</a></li>
+            <li><a href="team.html">团队</a></li>
         </ul>
     </nav>
 
