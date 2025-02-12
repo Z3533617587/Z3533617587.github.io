@@ -1,33 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <!-- 保持与首页相同的头部内容 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>软件学院实验室</title>
+    <link rel="stylesheet" href="style/styles.css">
+    <style>
+        /* 新增卡片样式 */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .lab-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .lab-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-title {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+
+        .card-description {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    </style>
 </head>
 <body>
-    <!-- 相同的导航栏 -->
+    <!-- 导航栏 -->
     <nav class="navbar">
         <button id="toggleButton">软件实验室</button>
         <ul id="directory">
             <li><a href="index.html">首页</a></li>
             <li><a href="research.html">研究</a></li>
-            <li><a href="publication.html">成果</a></li>
+            <li><a href="publications.html">成果</a></li>
             <li><a href="team.html">团队</a></li>
-            <li><a href="about.html">关于</a></li>
         </ul>
     </nav>
 
-    <div class="content">
-        <section id="research-detail">
-            <h1>研究领域详情</h1>
-            <div class="research-category">
-                <h2>机器学习优化</h2>
-                <img src="images/ml.jpg" alt="机器学习">
-                <p>针对小样本学习场景，开发了基于元学习的框架...<a href="projects/ml-project.html">查看项目</a></p>
+    <!-- 项目 -->
+    <div class="card-container">
+        <!-- 项目1 -->
+        <a href="detail1.html" class="lab-card">
+            <img src="images/软件服务工程负责人.jpg" alt="软件服务工程负责人" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">软件服务工程</h3>
+                <p class="card-description">研究方向： 机器学习与计算机视觉、人工智能与嵌入式应用等，围绕软件系统结构、电子服务构建、服务资源管理与运行环境等核心问题，在云服务框架、桌面云服务等方面开展相关研究。</p>
             </div>
-            <!-- 更多研究内容 -->
-        </section>
+        </a>
+
+        <!-- 项目2 -->
+        <a href="detail2.html" class="lab-card">
+            <img src="images/软件工程技术负责人.jpg" alt="软件工程技术负责人" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">软件工程技术</h3>
+                <p class="card-description">团队研究方向：软件工程与服务、脑科学与智能信息处理、虚拟现实技术、智慧医疗及情感计算，包括新型软件体系结构、信息处理与服务、群体智能、高性能计算和智能人机交互等多个领域。主要研究智能软件开发方法、软件开发技术与应用等。</p>
+            </div>
+        </a>
+
+        <!-- 项目3 -->
+        <a href="detail3.html" class="lab-card">
+            <img src="images/领域软件工程负责人.jpg" alt="领域软件工程负责人" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">领域软件工程</h3>
+                <p class="card-description">团队研究方向：以软件工程需求和数据驱动为出发点，开展面向软件工程的大数据分析、大数据质量管理与智能分析和生物医学大数据分析等，在智能医疗、城市管理、公共安全和智能交通等领域应用，形成以人工智能技术为基础，系统解决软件工程领域相关难题的领域软件工程团队。</p>
+            </div>
+        </a>
     </div>
 
-    <!-- 相同的页脚 -->
 </body>
 </html>
