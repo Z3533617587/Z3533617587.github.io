@@ -4,7 +4,184 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>软件学院实验室</title>
-    <link rel="stylesheet" href="style/styles.css">
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding-top: 60px;
+        }
+
+        /* 导航栏样式 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #333;
+            padding: 1rem;
+            transition: top 0.3s;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar.hidden {
+            top: -60px;
+        }
+
+        #directory {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        #directory li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        #directory li a:hover {
+            background: #555;
+        }
+
+        /* 响应式导航 */
+        @media (max-width: 768px) {
+            #directory {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #333;
+                flex-direction: column;
+                padding: 1rem;
+                transform: translateY(-100%);
+            }
+
+            #directory.active {
+                transform: translateY(0);
+            }
+        }
+
+        /* 轮播图样式 */
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            margin: 1rem auto;
+            max-width: 1500px;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .slider-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 1rem;
+        }
+
+        .slider-arrow {
+            background: rgba(0,0,0,0.5);
+            border: none;
+            color: white;
+            padding: 1rem;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .slider-arrow:hover {
+            background: rgba(0,0,0,0.8);
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .dot.active {
+            background: white;
+        }
+
+        /* 内容样式 */
+        .content-image {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 页脚样式 */
+        .footer {
+            background: #333;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .read-more:hover {
+            background: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <!-- 导航栏 -->
@@ -18,25 +195,26 @@
         </ul>
     </nav>
 
-    <!-- 主内容区域 -->
-    <!-- 轮播图完整结构 -->
-<div class="slider-container">
-    <div class="slider">
-        <div class="slide">
-            <img src="image/太理.jpg" alt="太原理工大学" width="1500" height="400" loading="lazy">
+    <!-- 轮播图 -->
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="image/太理.jpg" alt="太原理工大学" loading="lazy">
+            </div>
+            <div class="slide">
+                <img src="image/校徽.jpg" alt="校徽" loading="lazy">
+            </div>
         </div>
-        <div class="slide">
-            <img src="image/校徽.jpg" alt="校徽" width="1500" height="400" loading="lazy">
+        <div class="slider-controls">
+            <button class="slider-arrow prev">❮</button>
+            <button class="slider-arrow next">❯</button>
         </div>
+        <div class="slider-dots"></div>
     </div>
-    <div class="slider-controls">
-        <button class="slider-arrow prev">❮</button>
-        <button class="slider-arrow next">❯</button>
-    </div>
-    <div class="slider-dots"></div>
-</div>
 
-            <h1>首页</h1>
+    <!-- 主要内容 -->
+    <section>
+           <h1>首页</h1>
             <p>欢迎来到软件学院实验室的官方网站！</p>
             
             <h1>实验室介绍</h1>
@@ -72,26 +250,7 @@
     <a href="team.html" class="read-more">了解团队成员 →</a>
 </section>
 
-
-<style>
-/* 添加查看更多样式 */
-.read-more {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 8px 20px;
-    background: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background 0.3s;
-}
-
-.read-more:hover {
-    background: #0056b3;
-}
-</style>
-        <!-- 其他section结构类似 -->
-    </div>
+    </section>
 
     <!-- 页脚 -->
     <footer class="footer">
@@ -102,15 +261,32 @@
     </footer>
 
     <script>
-        // 导航栏切换功能
-        const toggleButton = document.getElementById('toggleButton');
-        const directory = document.getElementById('directory');
+        // 导航栏功能
+        const navbar = document.querySelector('.navbar');
+        let timeout;
 
-        toggleButton.addEventListener('click', () => {
-            directory.classList.toggle('active');
+        function resetTimer() {
+            clearTimeout(timeout);
+            navbar.classList.remove('hidden');
+            timeout = setTimeout(() => {
+                navbar.classList.add('hidden');
+            }, 3000); // 3秒无操作隐藏
+        }
+
+        // 检测用户活动
+        ['mousemove', 'scroll', 'touchstart'].forEach(event => {
+            document.addEventListener(event, resetTimer);
         });
 
-        // 轮播图功能
+        // 移动端菜单切换
+        const toggleButton = document.getElementById('toggleButton');
+        const directory = document.getElementById('directory');
+        toggleButton.addEventListener('click', () => {
+            directory.classList.toggle('active');
+            resetTimer();
+        });
+
+        // 增强轮播图功能
         const slider = document.querySelector('.slider');
         const slides = document.querySelectorAll('.slide');
         const prevBtn = document.querySelector('.prev');
@@ -118,7 +294,9 @@
         const dotsContainer = document.querySelector('.slider-dots');
         
         let currentIndex = 0;
-        const slideWidth = slides[0].clientWidth;
+        let autoPlayInterval;
+        let startX = 0;
+        let isDragging = false;
 
         // 创建指示点
         slides.forEach((_, index) => {
@@ -130,8 +308,8 @@
         });
 
         function goToSlide(index) {
-            currentIndex = index;
-            slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+            currentIndex = (index + slides.length) % slides.length;
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
             updateDots();
         }
 
@@ -141,21 +319,49 @@
             });
         }
 
+        // 导航控制
         nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            goToSlide(currentIndex);
+            goToSlide(currentIndex + 1);
+            resetAutoPlay();
         });
 
         prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            goToSlide(currentIndex);
+            goToSlide(currentIndex - 1);
+            resetAutoPlay();
         });
 
-        // 自动播放（每5秒切换）
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            goToSlide(currentIndex);
-        }, 5000);
+        // 触摸滑动
+        slider.addEventListener('touchstart', e => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+            resetAutoPlay();
+        });
+
+        slider.addEventListener('touchmove', e => {
+            if (!isDragging) return;
+            const x = e.touches[0].clientX;
+            const diff = startX - x;
+            if (Math.abs(diff) > 50) {
+                isDragging = false;
+                diff > 0 ? goToSlide(currentIndex + 1) : goToSlide(currentIndex - 1);
+            }
+        });
+
+        // 自动播放控制
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                goToSlide(currentIndex + 1);
+            }, 5000);
+        }
+
+        function resetAutoPlay() {
+            clearInterval(autoPlayInterval);
+            startAutoPlay();
+        }
+
+        // 初始化
+        startAutoPlay();
+        resetTimer();
     </script>
 </body>
 </html>
