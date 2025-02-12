@@ -60,73 +60,42 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
-        /* 导航栏样式 */
+        /* 原有导航栏样式调整 */
         .navbar {
             position: fixed;
             top: 0;
             width: 100%;
-            background: #333;
+            background: rgba(51, 51, 51, 0.95);
             padding: 1rem;
             transition: top 0.3s;
             z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            backdrop-filter: blur(10px);
         }
 
-        .navbar.hidden {
-            top: -60px;
-        }
-
-        #directory {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-            transition: transform 0.3s ease;
-        }
-
-        #directory li a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-
-        #directory li a:hover {
-            background: #555;
-        }
-
-        /* 响应式导航 */
+        /* 响应式调整 */
         @media (max-width: 768px) {
-            #directory {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: #333;
-                flex-direction: column;
+            .card-container {
+                grid-template-columns: 1fr;
                 padding: 1rem;
-                transform: translateY(-100%);
             }
 
-            #directory.active {
-                transform: translateY(0);
+            .lab-card {
+                margin-bottom: 1rem;
+            }
+
+            .card-image {
+                height: 180px;
             }
         }
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.5);
-            cursor: pointer;
-            transition: background 0.3s;
-        }
 
-        .dot.active {
-            background: white;
+        @media (max-width: 480px) {
+            .card-image {
+                height: 150px;
+            }
         }
-
         /* 内容样式 */
         .content-image {
             max-width: 100%;
@@ -182,7 +151,7 @@
     <div class="card-container">
         <!-- 项目1 -->
         <a href="detail1.html" class="lab-card">
-            <img src="image/软件服务工程负责人.jpg" alt="软件服务工程负责人" class="card-image">
+            <img src="image/软件服务工程负责人.png" alt="软件服务工程负责人" class="card-image">
             <div class="card-content">
                 <h3 class="card-title">软件服务工程</h3>
                 <p class="card-description">研究方向： 机器学习与计算机视觉、人工智能与嵌入式应用等，围绕软件系统结构、电子服务构建、服务资源管理与运行环境等核心问题，在云服务框架、桌面云服务等方面开展相关研究。</p>
@@ -191,7 +160,7 @@
 
         <!-- 项目2 -->
         <a href="detail2.html" class="lab-card">
-            <img src="image/软件工程技术负责人.jpg" alt="软件工程技术负责人" class="card-image">
+            <img src="image/软件工程技术负责人.png" alt="软件工程技术负责人" class="card-image">
             <div class="card-content">
                 <h3 class="card-title">软件工程技术</h3>
                 <p class="card-description">团队研究方向：软件工程与服务、脑科学与智能信息处理、虚拟现实技术、智慧医疗及情感计算，包括新型软件体系结构、信息处理与服务、群体智能、高性能计算和智能人机交互等多个领域。主要研究智能软件开发方法、软件开发技术与应用等。</p>
@@ -200,7 +169,7 @@
 
         <!-- 项目3 -->
         <a href="detail3.html" class="lab-card">
-            <img src="image/领域软件工程负责人.jpg" alt="领域软件工程负责人" class="card-image">
+            <img src="image/领域软件工程负责人.png" alt="领域软件工程负责人" class="card-image">
             <div class="card-content">
                 <h3 class="card-title">领域软件工程</h3>
                 <p class="card-description">团队研究方向：以软件工程需求和数据驱动为出发点，开展面向软件工程的大数据分析、大数据质量管理与智能分析和生物医学大数据分析等，在智能医疗、城市管理、公共安全和智能交通等领域应用，形成以人工智能技术为基础，系统解决软件工程领域相关难题的领域软件工程团队。</p>
