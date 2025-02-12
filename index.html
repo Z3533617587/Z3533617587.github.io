@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>实验室主页</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <title>Toggle Directory</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar">
-        <div class="nav-brand">实验室名称</div>
-        <ul class="nav-links">
-            <li><a href="index.html">首页</a></li>
-            <li><a href="about.html">关于</a></li>
-            <li><a href="research.html">研究</a></li>
-            <li><a href="publications.html">成果</a></li>
-            <li><a href="team.html">团队</a></li>
+    <button id="toggleButton">Toggle Directory</button>
+    <div class="directory" id="directory">
+        <ul>
+           <li>首页</li>
+            <li>研究</li>
+            <li>成果</li>
+            <li>团队</li>
+            <li>关于</li>
         </ul>
-    </nav>
+    </div>
+    <script src="script.js"></script>
 
     <!-- 主内容区域 -->
     <div class="content">
         <img src="image/太理.jpg" alt="太理" class="content-image" width="1500">
-        <h1>欢迎访问我们的实验室！</h1>
+        <h1>实验室介绍</h1>
         <p>软件学院实验室于2018年建设完成，总面积约1900平米，位于明向校区行勉楼一层和软件学院一层，包含了本科实验室、研究生实验室和创新实验室。</p>
         <p> 本科实验室总面积约1200平米，包含4个实验室（A1，C1，C2，C3）和1个服务器机房，每个实验室有130台云终端，总共可同时容纳520人上机实验。实验室部署方式架构采用了先进的桌面云解决方案，设备包括了14台高性能服务器、520台云终端，及其他多媒体控制、无线网络等设备。可以开展课程实验、课程设计、毕业设计、线上教学、创新实践课程等教学过程。</p>
         <p>本科实验室环境</p>
