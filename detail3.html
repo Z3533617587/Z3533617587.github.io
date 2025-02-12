@@ -1,23 +1,21 @@
-<!-- team.html -->
-<!-- team.html -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>软件学院实验室</title>
+    <title>科研团队 - 软件学院实验室</title>
     <style>
         /* 基础样式 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', '微软雅黑', sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            padding-top: 60px;
+            background: #f5f7fa;
+            padding-top: 80px;
         }
 
         /* 导航栏样式 */
@@ -57,72 +55,128 @@
             background: #555;
         }
 
-        /* 响应式导航 */
-        @media (max-width: 768px) {
-            #directory {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: #333;
-                flex-direction: column;
-                padding: 1rem;
-                transform: translateY(-100%);
-            }
 
-            #directory.active {
-                transform: translateY(0);
-            }
-        }
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.5);
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .dot.active {
-            background: white;
-        }
-
-        /* 内容样式 */
-        .content-image {
-            max-width: 100%;
-            height: auto;
-            margin: 1rem 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        section {
-            padding: 2rem;
+        /* 团队内容样式 */
+        .main-content {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
 
-        /* 页脚样式 */
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        /* 团队卡片样式 */
+        .team-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .team-card h2 {
+            color: #3498db;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 1rem;
+        }
+
+        /* 成员信息样式 */
+        .member {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+        }
+
+        .member img {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .member .info {
+            flex: 1;
+        }
+
+        .member h3 {
+            color: #2c3e50;
+            margin: 1rem 0;
+            font-size: 1.2rem;
+        }
+
+        .member p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* 表格样式优化 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .member {
+                flex-direction: column;
+            }
+
+            .member img {
+                width: 100%;
+                height: auto;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        /* 页脚样式（保持与首页一致） */
         .footer {
             background: #333;
             color: white;
             padding: 2rem;
             text-align: center;
+            margin-top: 3rem;
         }
 
-        .read-more {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 8px 20px;
-            background: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-
-        .read-more:hover {
-            background: #0056b3;
+        .footer h2 {
+            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -138,7 +192,7 @@
         </ul>
     </nav>
 
-    <section class="main-content">
+        <section class="main-content">
         <h1>科研团队</h1>
         
         <div class="team-card">
@@ -154,144 +208,112 @@
                     <h3>团队成果:</h3>
                     <p>团队承担过国家自然科学基金等国家级项目7项，主持省部级各类科研项目60余项、横项项目30余项，团队在国内外学术期刊会议上发表专业论文230余篇、获批授权专利49项，团队2023年获批国家级一流课程《面向对象程序设计基础》，2023年、2018年两次获得“山西省教学成果奖”一等奖；2023年获得“山西省科学技术奖”技术发明二等奖，2021年获得“山西省科学技术奖”自然科学二等奖，2020年山西省精品共享课《面向对象程序设计基础》，2013年《面向对象编程思想概览》获评教育部“国家级精品视频公开课”。团队现拥有山西省重点科技创新人才重点团队——多模态医学数据智能分析及辅助诊断，是软件工程学科软件人才的重要培养基地。</p>
                     <h3>成员基本情况</h3>
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <title>人员信息表</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
-</head>
-<body>
-    <h2>人员信息表</h2>
-    <table id="infoTable">
-        <thead>
-            <tr>
-                <th>姓名</th>
-                <th>性别</th>
-                <th>职称</th>
-                <th>主要研究方向</th>
-                <th>邮箱</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Data will be inserted here -->
-        </tbody>
-    </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>姓名</th>
+                        <th>性别</th>
+                        <th>职称</th>
+                        <th>专业领域</th>
+                        <th>联系方式</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>李 钢</td>
+                        <td>男</td>
+                        <td>副教授</td>
+                        <td>计算机科学与技术、软件工程、人工智能等</td>
+                        <td>ligang@tyut.edu.cn</td>
+                    </tr>
+                    <tr>
+                        <td>刘松华</td>
+                        <td>男</td>
+                        <td>副教授</td>
+                        <td>数据挖掘、复杂网络、时间序列、深度学习及在医学图像等领域的应用</td>
+                        <td>44628212@qq.com</td>
+                    </tr>
+                    <tr>
+                        <td>王星魁</td>
+                        <td>男</td>
+                        <td>副教授</td>
+                        <td>信息安全、软件工程</td>
+                        <td>wxk0301@163.com</td>
+                    </tr>
+                    <tr>
+                        <td>孙静宇</td>
+                        <td>男</td>
+                        <td>副教授</td>
+                        <td>推荐系统、通用人工智能、大数据、图像处理、信息安全、智能交通、智慧城市</td>
+                        <td>sunjingyu@tyut.edu.cn</td>
+                    </tr>
+                    <tr>
+                        <td>宋晓涛</td>
+                        <td>女</td>
+                        <td>讲师</td>
+                        <td>智能软件工程、开源软件等</td>
+                        <td>songxiaotao@tyut.edu.cn</td>
+                    </tr>
+                    <tr>
+                        <td>阎鹏飞</td>
+                        <td>男</td>
+                        <td>讲师</td>
+                        <td>双目立体视觉、计算机图像加密</td>
+                        <td>yanpengfei@tyut.edu.cn</td>
+                    </tr>
+                    <tr>
+                        <td>王千山</td>
+                        <td>男</td>
+                        <td>讲师</td>
+                        <td>医学图像处理、脑科学与智能计算</td>
+                        <td>wangqianshan@tyut.edu.cn</td>
+                    </tr>
+                    <tr>
+                        <td>赵紫娟</td>
+                        <td>女</td>
+                        <td>讲师</td>
+                        <td>医学图像处理、中医大数据分析</td>
+                        <td>zhaozijuan@tyut.edu.cn</td>
+                    </tr>
+                    <tr>
+                        <td>刘 艳</td>
+                        <td>女</td>
+                        <td>讲师</td>
+                        <td>微电子器件的性能仿真与计算</td>
+                        <td>liuyan@tyut.edu.cn</td>
+                    </tr>
+                    <tr>
+                        <td>邢 欢</td>
+                        <td>女</td>
+                        <td>助教</td>
+                        <td>人机交互与混合现实</td>
+                        <td>xinghuan@tyut.edu.cn</td>
+                    </tr>
+                    <tr>
+                        <td>任尊晓</td>
+                        <td>女</td>
+                        <td>助教</td>
+                        <td>数据挖掘</td>
+                        <td>rmmluna@163.com</td>
+                    </tr>
+                    <tr>
+                        <td>王 琦"</td>
+                        <td>女</td>
+                        <td>助教</td>
+                        <td>网络安全、数据挖掘、移动互联</td>
+                        <td>wangqi05@tyut.edu.cn</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 
-    <script>
-        const data = [
-            {
-                name: "刘松华",
-                gender: "男",
-                title: "副教授",
-                researchDirections: "数据挖掘、复杂网络、时间序列、深度学习及在医学图像等领域的应用",
-                email: "44628212@qq.com"
-            },
-            {
-                name: "王星魁",
-                gender: "男",
-                title: "副教授",
-                researchDirections: "信息安全、软件工程",
-                email: "wxk0301@163.com"
-            },
-            {
-                name: "孙静宇",
-                gender: "男",
-                title: "副教授",
-                researchDirections: "推荐系统、通用人工智能、大数据、图像处理、信息安全、智能交通、智慧城市",
-                email: "sunjingyu@tyut.edu.cn"
-            },
-            {
-                name: "宋晓涛",
-                gender: "女",
-                title: "讲师",
-                researchDirections: "智能软件工程、开源软件等",
-                email: "songxiaotao@tyut.edu.cn"
-            },
-            {
-                name: "阎鹏飞",
-                gender: "男",
-                title: "讲师",
-                researchDirections: "双目立体视觉、计算机图像加密",
-                email: "yanpengfei@tyut.edu.cn"
-            },
-            {
-                name: "王千山",
-                gender: "男",
-                title: "讲师",
-                researchDirections: "医学图像处理、脑科学与智能计算",
-                email: "wangqianshan@tyut.edu.cn"
-            },
-            {
-                name: "赵紫娟",
-                gender: "女",
-                title: "讲师",
-                researchDirections: "医学图像处理、中医大数据分析",
-                email: "zhaozijuan@tyut.edu.cn"
-            },
-            {
-                name: "刘 艳",
-                gender: "女",
-                title: "讲师",
-                researchDirections: "微电子器件的性能仿真与计算",
-                email: "liuyan@tyut.edu.cn"
-            },
-            {
-                name: "邢 欢",
-                gender: "女",
-                title: "助教",
-                researchDirections: "人机交互与混合现实",
-                email: "xinghuan@tyut.edu.cn"
-            },
-            {
-                name: "任尊晓",
-                gender: "女",
-                title: "助教",
-                researchDirections: "数据挖掘",
-                email: "rmmluna@163.com"
-            },
-            {
-                name: "王 琦",
-                gender: "女",
-                title: "助教",
-                researchDirections: "网络安全、数据挖掘、移动互联",
-                email: "wangqi05@tyut.edu.cn"
-            }
-        ];
-
-        const tableBody = document.querySelector("#infoTable tbody");
-        data.forEach(person => {
-            const row = document.createElement("tr");
-            Object.values(person).forEach(value => {
-                const cell = document.createElement("td");
-                cell.textContent = value;
-                row.appendChild(cell);
-            });
-            tableBody.appendChild(row);
-        });
-    </script>
-</body>
-</html>
-
+    <!-- 页脚 -->
     <footer class="footer">
         <h2>联系我们</h2>
         <p>地址: 明向校区行勉楼一层和软件学院一层</p>
         <p>电话: +86 1234567890</p>
         <p>邮箱: contact@example.com</p>
-    </footer>
     </footer>
 </body>
 </html>
