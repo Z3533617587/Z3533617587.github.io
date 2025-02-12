@@ -1,69 +1,91 @@
-/* 基础样式 */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
+      /* 导航栏样式 */
+        .navbar {
+            position: relative;
+            padding: 15px;
+            background: #f8f9fa;
+        }
 
-/* 导航栏 */
-#directory {
-    display: none; /* Initially hidden */
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    padding: 10px;
-}
+        #directory {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
 
-#directory ul {
-    list-style-type: none;
-    padding: 0;
-}
+        #directory.active {
+            max-height: 500px;
+        }
 
-#directory li {
-    padding: 5px 0;
-}
+        #directory li {
+            padding: 8px 0;
+        }
 
-.navbar {
-    background: #333;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        /* 轮播图样式 */
+        .slider-container {
+            position: relative;
+            max-width: 1500px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
 
-.nav-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-}
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
-}
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
 
-.nav-links a:hover {
-    color: #4CAF50;
-}
+        .slider-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
 
-/* 内容区域 */
-.content {
-    padding: 2rem;
-    min-height: 60vh;
-}
+        .slider-arrow {
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+        }
 
-/* 页脚 */
-.footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
+        .slider-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background: white;
+        }
+
+        /* 内容样式 */
+        .content-image {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
