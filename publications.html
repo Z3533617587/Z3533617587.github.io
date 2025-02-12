@@ -4,6 +4,74 @@
     <!-- 保持与首页相同的头部内容 -->
 </head>
 <body>
+            /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding-top: 60px;
+        }
+
+        /* 导航栏样式 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #333;
+            padding: 1rem;
+            transition: top 0.3s;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar.hidden {
+            top: -60px;
+        }
+
+        #directory {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        #directory li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        #directory li a:hover {
+            background: #555;
+        }
+
+        /* 响应式导航 */
+        @media (max-width: 768px) {
+            #directory {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #333;
+                flex-direction: column;
+                padding: 1rem;
+                transform: translateY(-100%);
+            }
+
+            #directory.active {
+                transform: translateY(0);
+            }
+        }
+
     <!-- 相同的导航栏 -->
     <nav class="navbar">
         <button id="toggleButton">软件实验室</button>
