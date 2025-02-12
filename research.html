@@ -1,95 +1,233 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>软件学院实验室</title>
-    <link rel="stylesheet" href="style/styles.css">
-    <style>
-        /* 新增卡片样式 */
-        .card-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .lab-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .lab-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .card-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 15px;
-        }
-
-        .card-title {
-            margin: 0 0 10px 0;
-            color: #333;
-        }
-
-        .card-description {
-            color: #666;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-    </style>
+    <!-- 保持与首页相同的头部内容 -->
 </head>
 <body>
-    <!-- 导航栏 -->
+    <!-- 相同的导航栏 -->
     <nav class="navbar">
         <button id="toggleButton">软件实验室</button>
         <ul id="directory">
             <li><a href="index.html">首页</a></li>
             <li><a href="research.html">研究</a></li>
-            <li><a href="publications.html">成果</a></li>
+            <li><a href="publication.html">成果</a></li>
             <li><a href="team.html">团队</a></li>
+            <li><a href="about.html">关于</a></li>
         </ul>
     </nav>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科研项目展示</title>
+    <style>
+        /* 基础样式 */
+        body {
+            font-family: 'Segoe UI', '微软雅黑', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
 
-    <!-- 实验室卡片容器 -->
-    <div class="card-container">
-        <!-- 实验室1 -->
-        <a href="detail1.html" class="lab-card">
-            <img src="images/lab1.jpg" alt="人工智能实验室" class="card-image">
-            <div class="card-content">
-                <h3 class="card-title">人工智能实验室</h3>
-                <p class="card-description">专注于机器学习、深度学习算法研究，开展自然语言处理、计算机视觉等前沿领域探索...</p>
-            </div>
-        </a>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-        <!-- 实验室2 -->
-        <a href="detail2.html" class="lab-card">
-            <img src="images/lab2.jpg" alt="大数据实验室" class="card-image">
-            <div class="card-content">
-                <h3 class="card-title">大数据实验室</h3>
-                <p class="card-description">研究分布式计算、数据挖掘技术，在金融、医疗等领域开展大数据应用研究...</p>
-            </div>
-        </a>
+        h2 {
+            color: #2c3e50;
+            border-left: 4px solid #007bff;
+            padding-left: 15px;
+            margin: 30px 0;
+        }
 
-        <!-- 实验室3 -->
-        <a href="detail3.html" class="lab-card">
-            <img src="images/lab3.jpg" alt="网络安全实验室" class="card-image">
-            <div class="card-content">
-                <h3 class="card-title">网络安全实验室</h3>
-                <p class="card-description">聚焦信息安全、密码学、区块链技术，开展网络攻防演练与安全系统研发...</p>
-            </div>
-        </a>
+        /* 表格样式 */
+        .project-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .project-table th,
+        .project-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .project-table th {
+            background: #007bff;
+            color: white;
+            font-weight: 600;
+        }
+
+        .project-table tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .project-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        /* 响应式表格 */
+        @media (max-width: 768px) {
+            .project-table {
+                border: 0;
+            }
+
+            .project-table thead {
+                display: none;
+            }
+
+            .project-table tr {
+                margin-bottom: 10px;
+                display: block;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+            }
+
+            .project-table td {
+                display: block;
+                text-align: right;
+                border-bottom: none;
+                position: relative;
+                padding-left: 50%;
+            }
+
+            .project-table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0;
+                width: 45%;
+                padding-left: 15px;
+                text-align: left;
+                font-weight: 600;
+                color: #2c3e50;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>实验室科研项目清单</h1>
+
+        <!-- 国家级项目 -->
+        <h2>国家级科研项目</h2>
+        <table class="project-table" aria-label="国家级科研项目列表">
+            <thead>
+                <tr>
+                    <th scope="col">项目来源</th>
+                    <th scope="col">项目名称</th>
+                    <th scope="col">时间</th>
+                    <th scope="col">负责人</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="项目来源">国家自然基金</td>
+                    <td data-label="项目名称">动态关联映射及卷积表征协同驱动的个性化用药策略生成方法研究</td>
+                    <td data-label="时间">2023年</td>
+                    <td data-label="负责人">董云云</td>
+                </tr>
+                <tr>
+                    <td data-label="项目来源">国家自然基金</td>
+                    <td data-label="项目名称">基于脑老化的多中心功能磁共振分析方法研究</td>
+                    <td data-label="时间">2022年</td>
+                    <td data-label="负责人">温昕</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 省部级项目 -->
+        <h2>省部级科研项目</h2>
+        <table class="project-table" aria-label="省部级科研项目列表">
+            <thead>
+                <tr>
+                    <th scope="col">项目来源</th>
+                    <th scope="col">项目名称</th>
+                    <th scope="col">时间</th>
+                    <th scope="col">负责人</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 山西省部级项目条目 -->
+                <tr>
+                    <td data-label="项目来源">山西省部级项目</td>
+                    <td data-label="项目名称">面向小样本高不平衡问题的代价敏感GAN异常检测方法研究</td>
+                    <td data-label="时间">2023年</td>
+                    <td data-label="负责人">边婧</td>
+                </tr>
+                <tr>
+                    <td data-label="项目来源">山西省部级项目</td>
+                    <td data-label="项目名称">肺癌影像和基因跨模态关联映射下的耐药性预测及智能用药分析方法研究</td>
+                    <td data-label="时间">2023年</td>
+                    <td data-label="负责人">董云云</td>
+                </tr>
+                <!-- 其他省部级项目条目... -->
+            </tbody>
+        </table>
+
+        <!-- 横向项目 -->
+        <h2>横向科研项目</h2>
+        <table class="project-table" aria-label="横向科研项目列表">
+            <thead>
+                <tr>
+                    <th scope="col">项目来源</th>
+                    <th scope="col">项目名称</th>
+                    <th scope="col">时间</th>
+                    <th scope="col">负责人</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="项目来源">浙江犀通科技有限公司</td>
+                    <td data-label="项目名称">管道机器人AI识别软件系统</td>
+                    <td data-label="时间">2023年</td>
+                    <td data-label="负责人">王建峰</td>
+                </tr>
+                <tr>
+                    <td data-label="项目来源">艾曲赛艾（苏州）科技有限公司</td>
+                    <td data-label="项目名称">基于多模态数据情感分类的VR交互系统</td>
+                    <td data-label="时间">2023年</td>
+                    <td data-label="负责人">曹若琛</td>
+                </tr>
+                <!-- 其他横向项目条目... -->
+            </tbody>
+        </table>
     </div>
 
+    <script>
+        // 移动端表格优化
+        function adjustTableForMobile() {
+            if (window.innerWidth <= 768) {
+                document.querySelectorAll('.project-table').forEach(table => {
+                    if (!table.getAttribute('data-mobile-optimized')) {
+                        table.querySelectorAll('td').forEach(td => {
+                            const headerText = td.parentNode.children[0].textContent;
+                            td.setAttribute('data-label', headerText);
+                        });
+                        table.setAttribute('data-mobile-optimized', 'true');
+                    }
+                });
+            }
+        }
+
+        // 初始化执行
+        adjustTableForMobile();
+        // 窗口大小改变时重新检测
+        window.addEventListener('resize', adjustTableForMobile);
+    </script>
+</body>
+</html>
+
+
+    <!-- 相同的页脚 -->
 </body>
 </html>
