@@ -1,127 +1,158 @@
-<!-- team.html -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>软件学院实验室</title>
+    <title>科研团队 - 软件学院实验室</title>
     <style>
         /* 基础样式 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', '微软雅黑', sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            padding-top: 60px;
+            background: #f5f7fa;
+            padding-top: 80px;
         }
 
-        /* 导航栏样式 */
+        /* 导航栏样式（保持与首页一致） */
         .navbar {
             position: fixed;
             top: 0;
             width: 100%;
-            background: #333;
+            background: rgba(51, 51, 51, 0.95);
             padding: 1rem;
-            transition: top 0.3s;
             z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            backdrop-filter: blur(10px);
         }
 
-        .navbar.hidden {
-            top: -60px;
+        /* 团队内容样式 */
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
 
-        #directory {
-            list-style: none;
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        /* 团队卡片样式 */
+        .team-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .team-card h2 {
+            color: #3498db;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 1rem;
+        }
+
+        /* 成员信息样式 */
+        .member {
             display: flex;
             gap: 2rem;
-            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+            align-items: flex-start;
         }
 
-        #directory li a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-
-        #directory li a:hover {
-            background: #555;
-        }
-
-        /* 响应式导航 */
-        @media (max-width: 768px) {
-            #directory {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: #333;
-                flex-direction: column;
-                padding: 1rem;
-                transform: translateY(-100%);
-            }
-
-            #directory.active {
-                transform: translateY(0);
-            }
-        }
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.5);
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .dot.active {
-            background: white;
-        }
-
-        /* 内容样式 */
-        .content-image {
-            max-width: 100%;
-            height: auto;
-            margin: 1rem 0;
+        .member img {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        section {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+        .member .info {
+            flex: 1;
         }
 
-        /* 页脚样式 */
+        .member h3 {
+            color: #2c3e50;
+            margin: 1rem 0;
+            font-size: 1.2rem;
+        }
+
+        .member p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* 表格样式优化 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .member {
+                flex-direction: column;
+            }
+
+            .member img {
+                width: 100%;
+                height: auto;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        /* 页脚样式（保持与首页一致） */
         .footer {
             background: #333;
             color: white;
             padding: 2rem;
             text-align: center;
+            margin-top: 3rem;
         }
 
-        .read-more {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 8px 20px;
-            background: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-
-        .read-more:hover {
-            background: #0056b3;
+        .footer h2 {
+            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -136,139 +167,119 @@
             <li><a href="team.html">团队</a></li>
         </ul>
     </nav>
+
     <section class="main-content">
         <h1>科研团队</h1>
         
         <div class="team-card">
             <h2>软件服务工程</h2>
             <div class="member">
-                <img src="image/软件服务工程负责人.png" alt="软件服务工程负责人" width="200">
+                <img src="image/软件服务工程负责人.png" alt="张兴忠教授">
                 <div class="info">
                     <h3>团队负责人：张兴忠（教授）</h3>
-                    <h3>个人简介：</h3>
-                    <p> 1988年7月太原理工大学自动化系毕业，获学士学位；1997年5月被聘为讲师；2003年被聘为副教授；1997年9月于太原理工大学计算机系读研究生，2000年5月毕业，获计算机应用硕士学位。1988年参加工作以来，一直在太原理工大学计算机系从事教学与科研工作，2016年调入软件学院工作。主要承担本科生及研究生电路与电子技术、ARM体系结构与编程、嵌入式软件开发技术等课程的教学任务；主编、参编教材5部，撰写字数100多万字；参加、主持科研项目多项，累计进帐经费200多万元；发表论文30余篇。</p>
+                    <h3>个人简介</h3>
+                    <p>1988年7月太原理工大学自动化系毕业，获学士学位；1997年5月被聘为讲师；2003年被聘为副教授；1997年9月于太原理工大学计算机系读研究生，2000年5月毕业，获计算机应用硕士学位。1988年参加工作以来，一直在太原理工大学计算机系从事教学与科研工作，2016年调入软件学院工作...</p>
                     <h3>研究方向</h3>
                     <p>机器学习与计算机视觉、人工智能与嵌入式应用等，围绕软件系统结构、电子服务构建、服务资源管理与运行环境等核心问题，在云服务框架、桌面云服务等方面开展相关研究。</p>
-                    <h3>团队成果:</h3>
-                    <p>发表教改论文20余篇，高水平学术论文30余篇，Web程序设计基础课程获评山西省精品课程培育项目，在科研环境方面，团队拥有一流的AI深度学习软件和硬件环境，无人机智能巡检与与自主控制，3D视觉与空间距离感知等人工智能科研设备及研发平台。
-                       团队教师指导带领研究生参加了第二届全国高校绿色计算大赛，并获得一等奖；《飞翔吧！电力精灵——新一代电力无人机巡检产品》在山西省第五届互联网+创新创业大赛中，荣获银奖；在中国高校计算机程序设计、大学生数学建模大赛、中国教育机器人大赛等20余项国家级、省级、校级大赛中均获得佳绩；
-                       近三年，团队教师指导研究生发表高水平学术论文30余篇，参与校级以上科研课题10余项，团队教师指导研究生申请专利3项，参与工程项目10余项获得太原理工大学就业创业工作考核前三名，为太原理工大学评为教育部2019年度全国创新创业典型经验全国50强贡献力量。</p>
-                    <h3>成员基本情况</h3>
-                    <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
-</head>
-<body>
-    <h2>人员信息表</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>姓名</th>
-                <th>性别</th>
-                <th>职称</th>
-                <th>专业领域</th>
-                <th>邮箱/联系方式</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>李 钢</td>
-                <td>男</td>
-                <td>副教授</td>
-                <td>计算机科学与技术、软件工程、人工智能、大数据、图像处理等</td>
-                <td>ligang@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>高保禄</td>
-                <td>男</td>
-                <td>讲师</td>
-                <td>虚拟现实、地理信息系统、智能数据处理、大数据、物联网技术等</td>
-                <td>85389301@qq.com</td>
-            </tr>
-            <tr>
-                <td>张 玲</td>
-                <td>女</td>
-                <td>副教授</td>
-                <td>计算机视觉、智能医学图像处理、机器学习、深度学习等</td>
-                <td>17625387@qq.com</td>
-            </tr>
-            <tr>
-                <td>边 婧</td>
-                <td>女</td>
-                <td>讲师</td>
-                <td>网络安全、智能信息处理</td>
-                <td>bianjing01@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>王建峰</td>
-                <td>男</td>
-                <td>讲师</td>
-                <td>认知智能、深度学习模型推理与验证、可视媒体计算</td>
-                <td>wangjianfeng@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>李 瑶</td>
-                <td>女</td>
-                <td>讲师</td>
-                <td>脑影像学、智能信息处理</td>
-                <td>liyao@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>郭牧寒</td>
-                <td>女</td>
-                <td>助教</td>
-                <td>机器学习在医学图像等领域的应用</td>
-                <td>guomuhan@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>贺小艳</td>
-                <td>女</td>
-                <td>助教</td>
-                <td>大数据、自动化测试</td>
-                <td>hexiaoyan@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>郭羽翔</td>
-                <td>男</td>
-                <td>助教</td>
-                <td>脑科学与人工智能相关</td>
-                <td>sxtygyx@163.com</td>
-            </tr>
-            <tr>
-                <td>张林娟</td>
-                <td>女</td>
-                <td>助教</td>
-                <td>人工智能、说话人识别、语音情感识别</td>
-                <td>zhanglinjuan@tyut.edu.cn</td>
-            </tr>
-            <tr>
-                <td>党建飞</td>
-                <td>男</td>
-                <td>助教</td>
-                <td>数据挖掘、知识推理</td>
-                <td>18435186223@163.com</td>
-            </tr>
-        </tbody>
-    </table>
-</body>
-</html>
-
+                    <h3>团队成果</h3>
+                    <p>发表教改论文20余篇，高水平学术论文30余篇，Web程序设计基础课程获评山西省精品课程培育项目，在科研环境方面，团队拥有一流的AI深度学习软件和硬件环境...</p>
                 </div>
+            </div>
+
+            <h3>成员基本情况</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>姓名</th>
+                        <th>性别</th>
+                        <th>职称</th>
+                        <th>专业领域</th>
+                        <th>联系方式</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>李 钢</td>
+                        <td>男</td>
+                        <td>副教授</td>
+                        <td>计算机科学与技术、软件工程、人工智能等</td>
+                        <td>ligang@tyut.edu.cn</td>
+                    </tr>
+                    <tr>
+                        <td>高保禄</td>
+                        <td>男</td>
+                        <td>讲师</td>
+                        <td>虚拟现实、地理信息系统、智能数据处理、大数据、物联网技术等</td>
+                        <td>85389301@qq.com</td>
+                    </tr>
+                    <tr>
+                        <td>张 玲</td>
+                        <td>女</td>
+                        <td>副教授</td>
+                        <td>计算机视觉、智能医学图像处理、机器学习、深度学习等</td>
+                        <td>17625387@qq.com</td>
+                    </tr>
+                    <tr>
+                        <td>边 婧</td>
+                        <td>女</td>
+                        <td>讲师</td>
+                        <td>网络安全、智能信息处理</td>
+                        <td>bianjing01@tyut.edu.cn</td>
+                    </tr>
+                    <tr>
+                        <td>王建峰</td>
+                        <td>男</td>
+                        <td>讲师</td>
+                        <td>认知智能、深度学习模型推理与验证、可视媒体计算</td>
+                        <td>wangjianfeng@tyut.edu.cn</td>
+                    </tr>
+                    <tr>
+                        <td>李 瑶</td>
+                        <td>女</td>
+                        <td>讲师</td>
+                        <td>脑影像学、智能信息处理</td>
+                        <td>liyao@tyut.edu.cn</td>
+                    </tr>
+                    <tr>
+                        <td>郭牧寒</td>
+                        <td>女</td>
+                        <td>助教</td>
+                        <td>机器学习在医学图像等领域的应用</td>
+                        <td>guomuhan@tyut.edu.cn</td>
+                    </tr>
+                    <tr>
+                        <td>贺小艳</td>
+                        <td>女</td>
+                        <td>助教</td>
+                        <td>大数据、自动化测试</td>
+                        <td>hexiaoyan@tyut.edu.cn</td>
+                    </tr>
+                    <tr>
+                        <td>郭羽翔</td>
+                        <td>男</td>
+                        <td>助教</td>
+                        <td>脑科学与人工智能相关</td>
+                        <td>sxtygyx@163.com</td>
+                    </tr>
+                    <tr>
+                        <td>张林娟</td>
+                        <td>女</td>
+                        <td>助教</td>
+                        <td>人工智能、说话人识别、语音情感识别</td>
+                        <td>zhanglinjuan@tyut.edu.cn</td>
+                    </tr>
+                    <tr>
+                        <td>党建飞</td>
+                        <td>男</td>
+                        <td>助教</td>
+                        <td>数据挖掘、知识推理</td>
+                        <td>18435186223@163.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
     <!-- 页脚 -->
     <footer class="footer">
         <h2>联系我们</h2>
