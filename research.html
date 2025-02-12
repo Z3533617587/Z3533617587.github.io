@@ -4,16 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>软件学院实验室</title>
-    <link rel="stylesheet" href="style/styles.css"> 
+    <link rel="stylesheet" href="style/styles.css">
     <style>
-        #details {
-            display: none;
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #f9f9f9;
+        /* 新增卡片样式 */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .lab-card {
             border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .lab-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-title {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+
+        .card-description {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
         }
     </style>
+</head>
 <body>
     <!-- 导航栏 -->
     <nav class="navbar">
@@ -25,25 +60,36 @@
             <li><a href="team.html">团队</a></li>
         </ul>
     </nav>
- 
-<body>
 
-<button onclick="toggleDetails()">点击查看详情</button>
+    <!-- 实验室卡片容器 -->
+    <div class="card-container">
+        <!-- 实验室1 -->
+        <a href="detail1.html" class="lab-card">
+            <img src="images/lab1.jpg" alt="人工智能实验室" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">人工智能实验室</h3>
+                <p class="card-description">专注于机器学习、深度学习算法研究，开展自然语言处理、计算机视觉等前沿领域探索...</p>
+            </div>
+        </a>
 
-<div id="details">
-    这里是详细信息内容。你可以在这里添加更多的文本、图片或其他HTML元素。
-</div>
+        <!-- 实验室2 -->
+        <a href="detail2.html" class="lab-card">
+            <img src="images/lab2.jpg" alt="大数据实验室" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">大数据实验室</h3>
+                <p class="card-description">研究分布式计算、数据挖掘技术，在金融、医疗等领域开展大数据应用研究...</p>
+            </div>
+        </a>
 
-<script>
-    function toggleDetails() {
-        var details = document.getElementById("details");
-        if (details.style.display === "none") {
-            details.style.display = "block";
-        } else {
-            details.style.display = "none";
-        }
-    }
-</script>
+        <!-- 实验室3 -->
+        <a href="detail3.html" class="lab-card">
+            <img src="images/lab3.jpg" alt="网络安全实验室" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">网络安全实验室</h3>
+                <p class="card-description">聚焦信息安全、密码学、区块链技术，开展网络攻防演练与安全系统研发...</p>
+            </div>
+        </a>
+    </div>
 
 </body>
 </html>
