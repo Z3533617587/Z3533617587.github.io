@@ -15,18 +15,176 @@
             <li><a href="about.html">关于</a></li>
         </ul>
     </nav>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Publications</title>
+    <style>
+        .publications-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
 
-    <div class="content">
-        <section id="research-detail">
-            <h1>研究领域详情</h1>
-            <div class="research-category">
-                <h2>机器学习优化</h2>
-                <img src="images/ml.jpg" alt="机器学习">
-                <p>针对小样本学习场景，开发了基于元学习的框架...<a href="projects/ml-project.html">查看项目</a></p>
-            </div>
-            <!-- 更多研究内容 -->
-        </section>
-    </div>
+        .publications-table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .publications-table th,
+        .publications-table td {
+            padding: 12px 15px;
+            max-width: 500px;
+        }
+
+        .publications-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .publications-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .publications-table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+
+        .journal-name {
+            font-style: italic;
+        }
+
+        @media screen and (max-width: 768px) {
+            .publications-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <table class="publications-table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Authors</th>
+                <th>Year</th>
+                <th>Journal/Conference</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 开始数据行 -->
+            <tr>
+                <td>DCCAFN: Deep convolution cascade attention fusion network based on imaging genomics for prediction survival analysis of lung cancer</td>
+                <td>Jia, Liye; Zhao, Juanjuan</td>
+                <td>2023</td>
+                <td class="journal-name">Complex & Intelligent Systems</td>
+            </tr>
+            <tr>
+                <td>DADFN: Dynamic adaptive deep fusion network based on imaging genomics for prediction recurrence of lung cancer</td>
+                <td>Jia, Liye; Zhao, Juanjuan</td>
+                <td>2023</td>
+                <td class="journal-name">Physics in Medicine & Biology</td>
+            </tr>
+            <tr>
+                <td>Weakly supervised label propagation algorithm classifies lung cancer imaging subtypes</td>
+                <td>Ren, Xueting; Zhao, Juanjuan</td>
+                <td>2023</td>
+                <td class="journal-name">Scientific Reports</td>
+            </tr>
+            <tr>
+                <td>Residual neural network with mixed loss based on batch training technique for identification of EGFR mutation status in lung cancer</td>
+                <td>Jia, Liye; Zhao, Juanjuan</td>
+                <td>2023</td>
+                <td class="journal-name">Multimedia Tools and Applications</td>
+            </tr>
+            <tr>
+                <td>Multi-scale dense selective network based on border modeling for lung nodule segmentation</td>
+                <td>Wang, Hexi; Zhao, Juanjuan</td>
+                <td>2023</td>
+                <td class="journal-name">International Journal of Computer Assisted Radiology and Surgery</td>
+            </tr>
+            <tr>
+                <td>MSTS-Net: Malignancy evolution prediction of pulmonary nodules from longitudinal CT images via multi-task spatial-temporal self-attention network</td>
+                <td>Song, Ping; Zhao, Juanjuan</td>
+                <td>2023</td>
+                <td class="journal-name">International Journal of Computer Assisted Radiology and Surgery</td>
+            </tr>
+            <tr>
+                <td>A multitask dual‐stream attention network for the identification of KRAS mutation in colorectal cancer</td>
+                <td>Song, Kai; Zhao, Juanjuan</td>
+                <td>2023</td>
+                <td class="journal-name">Medical Physics</td>
+            </tr>
+            <tr>
+                <td>Quantum steganography scheme and circuit design based on the synthesis of three grayscale images in the HSI color space</td>
+                <td>Sun, Jingyu; Zhang, Hao</td>
+                <td>2023</td>
+                <td class="journal-name">Quantum Information Processing</td>
+            </tr>
+            <tr>
+                <td>Quantum cryptosystem and circuit design for color image based on novel 3D Julia-fractal chaos system</td>
+                <td>Wang, Wangting; Zhang, Hao; Sun, Jingyu</td>
+                <td>2023</td>
+                <td class="journal-name">Quantum Information Processing</td>
+            </tr>
+            <tr>
+                <td>Color image quantum steganography scheme and circuit design based on DWT+ DCT+ SVD</td>
+                <td>Sun, Jingyu; Zhang, Hao</td>
+                <td>2023</td>
+                <td class="journal-name">Physica A: Statistical Mechanics and its Applications</td>
+            </tr>
+            <tr>
+                <td>Fisher-Yates scrambling algorithm combined with S-box color image encryption technology based on 3D-SCCM chaotic system</td>
+                <td>Wang, Wangting; Zhang, Hao; Sun, Jingyu</td>
+                <td>2023</td>
+                <td class="journal-name">Multimedia Tools and Applications</td>
+            </tr>
+            <tr>
+                <td>A novel non-equilibrium hyperchaotic system and application on color image steganography with FPGA implementation</td>
+                <td>Sun, Jingyu; Zhang, Hao</td>
+                <td>2023</td>
+                <td class="journal-name">Nonlinear Dynamics</td>
+            </tr>
+            <tr>
+                <td>A novel image encryption algorithm combined complex order chaotic system and modified AES</td>
+                <td>Sun, Jingyu; Zhang, Hao</td>
+                <td>2023</td>
+                <td class="journal-name">Multimedia Tools and Applications</td>
+            </tr>
+            <tr>
+                <td>A novel multi-wing chaotic system with FPGA implementation and application in image encryption</td>
+                <td>Cai, Hong; Zhang, Hao; Sun, Jingyu</td>
+                <td>2023</td>
+                <td class="journal-name">Journal of Real-Time Image Processing</td>
+            </tr>
+            <tr>
+                <td>FPGA image encryption-steganography using a novel chaotic system with line equilibria</td>
+                <td>Sun, Jingyu; Zhang, Hao</td>
+                <td>2023</td>
+                <td class="journal-name">Digital Signal Processing</td>
+            </tr>
+            <tr>
+                <td>A collaboration-aware approach to profiling developer expertise with cross-community data</td>
+                <td>Xiaotao Song; Hailong Sun</td>
+                <td>2023</td>
+                <td>The 22nd IEEE International Conference on Software Quality, Reliability, and Security (QRS 2022)</td>
+            </tr>
+            <tr>
+                <td>Application Research of CDIO education initiative in reforming online-offline hybrid teaching of "software testing" course*</td>
+                <td>Xiaotao Song; Xiaotao Song</td>
+                <td>2023</td>
+                <td>IEEE International Conference on Teaching, Assessment, and Learning for Engineering (TALE) 2022</td>
+            </tr>
+            <tr>
+                <td>SELDNet: Sequenced encoder and lightweight decoder network for COVID-19 infection region segmentation</td>
+                <td>Fan, Xiaole; Feng, Xiufang</td>
+                <td>2023</td>
+                <td class="journal-name">Displays</td>
+            </tr>
+        </tbody>
+    </table>
+
 
     <!-- 相同的页脚 -->
 </body>
